@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <MenuBar layoutX="157.0" layoutY="116.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#encryptFile" text="Зашифровать" />
+                  <MenuItem mnemonicParsing="false" onAction="#decryptFile" text="Расшифровать" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutY="27.0" prefHeight="60.0" prefWidth="200.0" spacing="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <Label text="Длина смещения" />
+            <TextField fx:id="offsetField" />
+            <Label text="Ключевое слово" />
+            <TextField fx:id="keyTextField" />
+         </children>
+         <padding>
+            <Insets left="15.0" top="15.0" />
+         </padding>
+      </HBox>
+      <AnchorPane layoutY="90.0" prefHeight="475.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <TextArea fx:id="sourceTextArea" layoutX="14.0" layoutY="-65.0" prefHeight="450.0" prefWidth="320.0" wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <TextArea fx:id="resultTextArea" layoutX="472.0" layoutY="-93.0" prefHeight="450.0" prefWidth="320.0" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+            <VBox alignment="TOP_CENTER" layoutX="335.0" layoutY="15.0" prefHeight="200.0" prefWidth="130.0" spacing="15.0" AnchorPane.leftAnchor="335.0" AnchorPane.rightAnchor="335.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onEncryptEvent" prefHeight="25.0" prefWidth="120.0" text="Зашифровать &gt;&gt;" />
+                  <Button mnemonicParsing="false" onAction="#onDecryptEvent" prefWidth="120.0" text="&lt;&lt; Расшифровать" />
+                  <Button mnemonicParsing="false" onAction="#onClearEvent" prefWidth="120.0" text="Очистить" />
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Accordion layoutX="36.0" layoutY="25.0" />
+   </children>
+</AnchorPane>
